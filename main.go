@@ -20,8 +20,8 @@ func main() {
 		sequenceNumber := i + 1
 		for j := 0; j < 3; j++ {
 			r := rand.New(rand.NewSource(time.Now().UnixNano()))
-			result := r.Intn(100)
-			if result >= 50 {
+			result := r.Intn(2)
+			if result == 1 {
 				yao = 9
 			} else {
 				yao = 6
