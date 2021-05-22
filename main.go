@@ -41,9 +41,11 @@ func main() {
 			r := rand.New(rand.NewSource(time.Now().UnixNano()))
 			result := r.Intn(2)
 			if result == 1 {
-				yao = 9
+				// 正面3，阳
+				yao = 3
 			} else {
-				yao = 6
+				//反面2，阴
+				yao = 2
 			}
 			sum = sum + yao
 			fmt.Printf("%d  ", yao)
@@ -51,20 +53,20 @@ func main() {
 		fmt.Printf("number %d: \t", sequenceNumber)
 		// myStack.Push(sequenceNumber)
 		switch sum {
-		// 6+6+9
-		case 21:
-			fmt.Println("- -" + "\n")
-			myStack.Push("- -" + "\n")
-		// 6+6+6
-		case 18:
+		// 2+2+2,老阴
+		case 6:
 			fmt.Println("- -,x" + "\n")
 			myStack.Push("- -,x" + "\n")
-		// 9+9+6
-		case 24:
+		// 2+2+3，少阳
+		case 7:
 			fmt.Println("——" + "\n")
 			myStack.Push("——" + "\n")
-		// 9+9+9
-		case 27:
+		// 3+3+2，少阴
+		case 8:
+			fmt.Println("- -" + "\n")
+			myStack.Push("- -" + "\n")
+		// 3+3+3，老阳
+		case 9:
 			fmt.Println("——,x" + "\n")
 			myStack.Push("——,x" + "\n")
 		}
